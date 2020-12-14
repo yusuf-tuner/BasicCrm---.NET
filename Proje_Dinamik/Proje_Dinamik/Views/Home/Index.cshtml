@@ -1,0 +1,43 @@
+﻿@using Proje_Dinamik.Models.Entity
+@model List<Customer>
+
+@{
+	ViewBag.Title = "BasicCrm";
+}
+
+<h2>Müşteri Listesi</h2>
+<br />
+
+<div>
+	<table class="table table-bordered ">
+		<thead>
+			<tr>
+				<th scope="col">Müşteri Sıra No</th>
+				<th scope="col">Müşteri Ad</th>
+				<th scope="col">Müşteri Soyad</th>
+				<th scope="col">GÜNCELLE</th>
+				<th scope="col">DETAY</th>
+				<th scope="col">SİL</th>
+			</tr>
+		</thead>
+		<tbody>
+		@{ int sirano = 0;}
+		@foreach (var x in Model)
+		{
+			sirano++;
+			<tr>
+				<th>@sirano</th>
+				<td>@x.customerName</td>
+				<td>@x.customerSurname</td>
+
+				<td><a href="/Home/CustomerUpdate/@x.customerID" class="btn btn-success">GÜNCELLE</a></td>
+				<td><a href="/Home/CustomerDetails/@x.customerID" class="btn btn-info">DETAY</a></td>
+				<td><a href="/Home/CustomerDelete/@x.customerID" class="btn btn-danger">SİL</a></td>
+			</tr>
+		}
+
+		</tbody>
+
+	</table>
+</div>
+

@@ -1,0 +1,41 @@
+﻿@model Proje_Dinamik.Models.Entity.Customer
+@{
+	ViewBag.Title = "CustomerAdd";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Müşteri Ekleme Ekranı</h2>
+<br />
+
+<form method="post" class="form-group">
+	<div>
+		<label>Müşteri Ad</label>
+		@Html.TextBoxFor(x => x.customerName, new { @class = "form-control", @placeholder = "Adınız.", @required = "" })
+	</div>
+	<div>
+		<label>Müşteri Soyad</label>
+		@Html.TextBoxFor(x => x.customerSurname, new { @class = "form-control", @placeholder = "Soyadınız.", @required = "" })
+	</div>
+	<div>
+		<label>Yaş</label>
+		@Html.TextBoxFor(x => x.customerAge, new { @class = "form-control", @placeholder = "Yaşınız.", @required = "" })
+	</div>
+	<div>
+		<label>Cinsiyet</label>
+		@Html.TextBoxFor(x => x.customerGender, new { @class = "form-control", @placeholder = "Cinsiyetiniz.", @required = "" })
+	</div>
+	<div>
+		<label>Telefon</label>
+		@Html.TextBoxFor(x => x.customTelephone, new { @class = "form-control", @placeholder = "Telefon no.", @required = "" })
+	</div>
+	<div>
+		<label>Adres</label>
+		@Html.TextBoxFor(x => x.customerAdress, new { @class = "form-control", @placeholder = "Adresiniz.", @required = "" })
+	</div>
+
+	<br />
+	<div>
+		<a href="/Home/Index/"><button class="btn btn-primary">Kaydet</button></a>
+	</div>
+
+</form>

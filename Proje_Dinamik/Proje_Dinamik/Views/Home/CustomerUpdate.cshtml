@@ -1,0 +1,45 @@
+﻿@model Proje_Dinamik.Models.Entity.Customer
+
+@{
+	ViewBag.Title = "CustomerUpdate";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Müşteri Güncelleme Ekranı</h2>
+<br />
+
+<form method="post" class="form-group">
+
+	<div>
+		<label>Müşteri Ad</label>
+		@Html.TextBoxFor(x => x.customerName, new { @class = "form-control", @required="" })
+	</div><br />
+	<div>
+		<label>Müşteri Soyad</label>
+		@Html.TextBoxFor(x => x.customerSurname, new { @class = "form-control", @required = "" })
+	</div><br />
+	<div>
+		<label>Yaş</label>
+		@Html.TextBoxFor(x => x.customerAge, new { @class = "form-control", @required = "" })
+	</div><br />
+	<div>
+		<label>Cinsiyet</label>
+		@Html.TextBoxFor(x => x.customerGender, new { @class = "form-control", @required = "" })
+	</div><br />
+	<div>
+		<label>Telefon</label>
+		@Html.TextBoxFor(x => x.customTelephone, new { @class = "form-control", @required = "" })
+	</div><br />
+	<div>
+		<label>Adres</label>
+		@Html.TextBoxFor(x => x.customerAdress, new { @class = "form-control", @required = "" })
+	</div>
+	<br />
+	<div>
+		<button class="btn btn-warning">Güncelle</button>
+	</div>
+	<div class="invisible">
+		@Html.TextBoxFor(x => x.customerID, new { @class = "form-control" })
+	</div>
+
+</form>
